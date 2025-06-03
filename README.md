@@ -1,78 +1,136 @@
-# aviation-excel-data-analysis
-Case Studies & Guesstimates for E-Commerce Industries
 
-The e-commerce industry has fundamentally transformed the way people shop and conduct business, becoming a vital part of the global economy. In today's era, its importance is highlighted by the convenience and accessibility it offers, allowing consumers to shop anytime and anywhere. E-commerce breaks down geographical barriers, enabling businesses to reach a global audience and fostering international trade. It also brings cost efficiencies, reducing overhead costs compared to traditional brick-and-mortar stores. The industry thrives on innovation, with advancements in technology continually enhancing the shopping experience.
-Data scientists play a crucial role in the growth and evolution of e-commerce. Their expertise in data analysis helps businesses understand customer behaviour, preferences, and purchasing habits, enabling personalised marketing and improved customer experiences. They optimise inventory management through predictive analytics, ensuring products are available when needed while minimising excess stock. Data scientists also develop dynamic pricing strategies, analyse market trends, and enhance fraud detection systems to protect both businesses and customers. By leveraging data, they help e-commerce platforms improve customer service and streamline operations, driving growth and maintaining a competitive edge in the market.
-PART - I
+# Travel & Hospitality(aviation)
 
-Product Dissection 
+### **Sky Analytics: Navigating the Complexities of Airline and Airport Operations**
 
-1. Platform Selection
-Question: Choose a leading platform from a domain related to the e-commerce industry. Justify your selection by discussing the platform's popularity, impact, and relevance in its industry.
-2. Core Features and Functionalities
-Question: Research and list the core features and functionalities of the selected platform. Describe how these features contribute to the platform’s success and user engagement.
-3. Real World Problems
-Question: Identify the real-world problems that the platform aims to solve. Discuss how the platform addresses these problems through its features and functionalities.
+### **Background:**
 
+SkyNet Analysis Inc. is a leading consultancy firm specializing in aviation analytics. With the aviation industry's rapid expansion and the increasing complexity of global air travel, SkyNet plays a critical role in providing data-driven insights to airlines, airports, and regulatory bodies. The company has access to extensive datasets that cover a wide range of information, including flight schedules, delays, airline operations, and airport traffic details. These datasets offer a unique opportunity to explore and understand the multifaceted nature of the aviation industry, from operational efficiency and customer satisfaction to logistical challenges and environmental impact.
 
+### Objective:
 
+The primary objective of this case study, titled "Sky Analytics: Navigating the Complexities of Airline and Airport Operations," is to deeply analyze and interpret the extensive datasets encompassing flights, airlines, and airports - namely "flights.csv", "airlines.csv", and "airports.csv". The analysis aims to uncover critical insights into flight operations, delay patterns, airline efficiency, and airport traffic dynamics. By exploring these datasets, the study seeks to identify key factors influencing operational efficiency, understand the intricacies of flight scheduling and delays, and evaluate the performance metrics of airlines and airports. The ultimate goal is to provide strategic recommendations to enhance operational effectiveness, improve customer experiences in air travel, and contribute to the overall advancement of the aviation industry's standards and practices.
 
+### **Data Source:**
 
+1. **Flights Dataset**
 
-Database Management & Schema Design 
-4. Schema Design
-Question: Based on the features and functionalities you have identified, design a schema that reflects the platform’s data structure. Define the key entities, attributes, and relationships that underpin these features.
-5. ER Diagram Creation
-Question: Utilise tools like the Miro platform or similar applications to create an illustrative Entity-Relationship (ER) diagram. This diagram should vividly depict the entities, attributes, and relationships present within your schema design.
-Revenue and Profit Growth Strategies
-Question: After completing the product dissection and schema design steps for the chosen platform, conduct a comprehensive case study on the above chosen industry. Your goal is to identify and propose strategies to increase the profit of the industry by at least 25%.
-Create a detailed report summarising your findings and proposals. Include data-driven justifications for each proposed strategy and present your case study using visual aids such as charts, graphs, and diagrams to illustrate your points. Outline the steps, resources, and timeline required to achieve the desired revenue and profit growth.
+[flights.csv](https://prod-files-secure.s3.us-west-2.amazonaws.com/d1e1bc70-9ede-4c69-84fd-42c5605803a0/ae2ac182-d6b6-4411-ad7e-3be1d7bc2a33/flights.csv)
 
+This dataset contains detailed flight information, including timings, delays, and other flight-specific data.
 
+- **YEAR, MONTH, DAY, DAY_OF_WEEK**: Date and day information for the flight.
+- **AIRLINE**: Airline identifier.
+- **FLIGHT_NUMBER**: Flight number.
+- **TAIL_NUMBER**: Aircraft tail number.
+- **ORIGIN_AIRPORT, DESTINATION_AIRPORT**: Airport codes for origin and destination.
+- **SCHEDULED_DEPARTURE, DEPARTURE_TIME**: Scheduled and actual departure times.
+- **DEPARTURE_DELAY**: Delay in departure (minutes).
+- **TAXI_OUT**: The time duration between departure from the gate and wheels off.
+- **WHEELS_OFF, WHEELS_ON**: Time when wheels were off/on the ground.
+- **SCHEDULED_TIME**: Scheduled duration of the flight.
+- **ELAPSED_TIME**: Actual time taken for the flight.
+- **AIR_TIME**: Time in the air.
+- **DISTANCE**: Distance covered by the flight.
+- **TAXI_IN**: The time duration from wheels on to arrival at the gate.
+- **SCHEDULED_ARRIVAL, ARRIVAL_TIME**: Scheduled and actual arrival times.
+- **ARRIVAL_DELAY**: Delay in arrival (minutes).
+- **DIVERTED, CANCELLED**: Indicators for diverted or cancelled flights.
+- **CANCELLATION_REASON**: Reason for cancellation (if any).
+- **AIR_SYSTEM_DELAY, SECURITY_DELAY, AIRLINE_DELAY, LATE_AIRCRAFT_DELAY, WEATHER_DELAY**: Different types of delays (minutes).
 
+1. **Airlines Dataset**
 
+[airlines.csv](https://prod-files-secure.s3.us-west-2.amazonaws.com/d1e1bc70-9ede-4c69-84fd-42c5605803a0/3632c550-cdbb-440f-a32b-90dbe4767865/airlines.csv)
 
+This dataset provides information about various airlines.
 
+- **IATA_CODE**: Unique airline code.
+- **AIRLINE**: Full name of the airline.
 
+1. **Airports Dataset**
 
+[airports.csv](https://prod-files-secure.s3.us-west-2.amazonaws.com/d1e1bc70-9ede-4c69-84fd-42c5605803a0/1c354ebb-8057-4cf1-8d36-8a94c529bcd1/airports.csv)
 
-PART - II
+This dataset contains information about various airports.
 
-Guesstimates
-What percentage of total retail sales in 2025 will be conducted through e-commerce platforms?
-This question requires a rough estimation based on current trends and growth rates in the e-commerce industry.
+- **IATA_CODE**: Unique airport code.
+- **AIRPORT**: Full name of the airport.
+- **CITY**: City where the airport is located.
+- **STATE**: State where the airport is located.
+- **COUNTRY**: Country where the airport is located.
+- **LATITUDE, LONGITUDE**: Geographic coordinates of the airport.
 
-How much will the average online shopper spend annually in 2025?
-This question involves estimating the average yearly expenditure of an online shopper, considering factors such as inflation, income growth, and changes in consumer behaviour.
+### **Part 1: Excel Data Analysis: Manipulation, Formulas and Functions**
 
-What will be the market share of mobile e-commerce (m-commerce) in total e-commerce sales in the next five years?
-This question requires an estimation of the growth and penetration of mobile shopping compared to desktop and other devices.
+1. **Missing Data Handling:** 
+    - Identify and address missing data in the movies dataset. Are there any patterns in the missing data that can be noted?
+2. **Flight Delays Analysis**:
+    - Determine the average flight delay per airline. What are the top 3 airlines with the highest average delays?
+3. **Airport Traffic Volume**:
+    - Identify the top 5 busiest airports based on the number of incoming and outgoing flights.
+4. **Flight Cancellation Insights**:
+    - Analyze the flight cancellations: Which airline has the highest cancellation rate, and what are the most common reasons for cancellations?
+5. **Seasonal Variations in Flight Operations**:
+    - Examine if there are seasonal patterns in flight operations. Are certain months more prone to delays or cancellations?
+6. **Correlation between Distance and Delays**:
+    - Investigate if there's a correlation between the distance of the flight and the length of delays. Use scatter plots for visualization.
+7. **Efficiency of Airlines**:
+    - Calculate the on-time performance (percentage of flights that are not delayed) for each airline. Rank them based on this metric.
+8. **Impact of Day of Week on Flight Operations**:
+    - Assess how flight operations (delays, cancellations) vary by the day of the week.
+9. **Analysis of Airport Connectivity**:
+    - Which airports serve as the most significant hubs in terms of connectivity (most destinations served)?
+10. **Flight Duration Accuracy**:
+    - Compare the scheduled flight duration versus the actual flight duration. Which airlines have the most and least deviation?
+11. **Airline Fleet Utilization**:
+    - Based on the tail numbers, determine which airline has the highest number of flights per aircraft, indicating fleet utilization.
+12. **Airport Geographical Analysis**:
+    - Using latitude and longitude data, analyze the geographical distribution of airports. Which states or regions have the highest concentration of airports?
+13. **Delayed Flights and Delay Types Analysis**:
+    - For flights that are delayed, break down the delay types (airline, weather, security, etc.) and analyze their proportions.
+14. **Long-Haul vs Short-Haul Operations**:
+    - Compare the operational metrics (delays, cancellations) between long-haul and short-haul flights for different airlines.
+15. **Pivot Analysis of Flights Data**:
+    - Use pivot tables to summarize key operational metrics (like average delay, number of flights, cancellations) by airline and airport.
+16. **Data Integration for Comprehensive Insights**:
+    - Merge data from the "airlines.csv" and "flights.csv" to provide enhanced insights, such as correlating airline names with operational metrics. Analyze the merged data to determine the overall on-time performance of each airline, considering both arrival and departure delays.
 
-What is the estimated increase in the number of e-commerce websites in the next three years?
-This question involves predicting the growth rate of new e-commerce websites based on current trends, technological advancements, and market demands.
+16. **Airport Operations and Connectivity Assessment**:
 
-How much will global e-commerce sales grow annually over the next five years?
-This question requires an estimate of the annual growth rate of global e-commerce sales, considering factors such as market expansion, technological innovations, and changes in consumer behaviour.
+- Combine the "flights.csv" dataset with the "airports.csv" based on airport codes. Use the merged dataset to identify the top 3 airports in terms of flight connectivity (number of unique destinations served) and analyze their average delay times (both departure and arrival).
+1. **Flight Delay Impact Analysis**:
+    - Calculate the cumulative impact of delays for each airline. Consider both the frequency of delays and the average delay time. How do these factors combine to affect overall airline performance?
+2. **Optimal Flight Path Efficiency Assessment**:
+    - Using the distance data from "flights.csv" and geographical coordinates from "airports.csv", calculate the efficiency of various flight paths. Determine if there are significant differences in the efficiency of flights (measured as a ratio of actual flight time to the shortest possible time based on distance) for different airlines or types of aircraft (identified by tail number).
+3. **Airport Performance and Environmental Factors Correlation**:
+    - Investigate if there's a correlation between airport performance (in terms of delays) and environmental factors like location (latitude and longitude from "airports.csv") and time of year (seasonal weather conditions). Are certain airports more prone to delays due to their geographical location and the associated weather patterns?
+4. **Complex Delay Cause Analysis**:
+    - Use nested functions to analyze the primary cause of delays for each airline. Determine if the predominant cause of delay (like airline delay, weather delay, security delay) varies by airline and time of day.
+5. **Analysis of Flight Frequency and Peak Hours**: 
+    - Analyze the flight frequencies to determine the peak operating hours for major airports. (Use a combination of Excel functions to categorize flights into different time slots (e.g., morning, afternoon, evening, night) and calculate the number of flights in each slot for the top 5 busiest airports.)
 
+(Note: Show Vizualizations wherever possible in Part 1)
 
+### **Part 2: Building an Excel Dashboard**
 
+Create an interactive and dynamic Excel dashboard that provides a visual and analytical representation of key aspects of the aviation datasets. The dashboard should offer insights into flight operations, airline performance, and airport activity.
 
+### **Key Components to Include in the Dashboard:**
 
-PART - III
-Scenario Based Questions
-Scenario 1:
-The company is launching a subscription service where customers can subscribe to receive products every month at a discounted rate. They want to understand how the retention of subscription customers compares to regular customers who do not subscribe.
-Question 1:
-How would you compare the retention rates of subscription customers versus non-subscription customers? What metrics would you focus on, and how would you structure the cohort analysis?
-Hint: Divide the customers into two cohorts (subscription vs non-subscription) and track retention over multiple months. Look at metrics such as average order frequency, repeat purchase rates, and customer lifetime value (CLV).
-Question 2:
-Suppose you find that subscription customers have a 20% higher retention rate after 3 months compared to non-subscription customers. What recommendations would you make to the business based on this finding?
-Hint: Consider how the company can capitalise on this insight by encouraging more customers to subscribe, offering promotions, or improving the subscription model.
-Scenario 2:
-The company is testing two different landing pages for new users. Version A emphasises discounted products, while Version B highlights the quality and premium nature of products. The company wants to know which version drives more conversions (i.e., purchases).
-Question 1:
-How would you design an A/B test to determine which landing page (Version A or Version B) performs better in terms of conversion rate?
-Hint: Define the key metrics (conversion rate), ensure random assignment of users to each version, and run the test over a statistically significant period.
-Question 2:
-After running the A/B test, you find that Version B has a higher conversion rate, but the difference is not statistically significant. What would you do next? Should the company adopt Version B, or continue with Version A?
-Hint: Consider sample size, test duration, and whether further testing (e.g., multivariate testing or extending the test period) might be necessary to confirm the result.
+1. **Flight Operations Overview**:
+    - Incorporate a summary view showing total number of flights, average delays, and flight cancellations. Include filters to view data by specific airlines or airports.
+2. **Airline Performance Analysis**:
+    - Visualize performance metrics for each airline, such as average delay time, cancellation rates, and frequency of flights. Use charts like bar graphs or line charts for comparison.
+3. **Airport Traffic Visualization**:
+    - Display data on the busiest airports in terms of incoming and outgoing flights. Include interactive elements like a map for geographical representation and pie charts for traffic distribution.
+4. **Delay Cause Breakdown**:
+    - Provide a detailed analysis of the reasons for flight delays (weather, security, airline delays, etc.). Use a combination of pivot tables and stacked bar charts for this analysis.
+5. **Time-based Flight Trends**:
+    - Show how flight patterns and delay trends vary over different times of the day and across months. Implement a timeline or slider feature to allow users to explore temporal changes.
+6. **User Interaction Features**:
+    - Add slicers, dropdown menus, and timeline controls for users to interactively filter and explore the data across various dimensions like time periods, airlines, and airport codes.
+7. **Dashboard Aesthetics and Usability**:
+    - Ensure the dashboard is not only informative but also visually appealing and easy to navigate. Maintain a consistent color scheme and clear labels.
+8. **Advanced Analysis (Optional)**:
+    - If feasible, include a predictive analysis section where users can forecast future trends in airline performance or airport traffic based on historical data.
